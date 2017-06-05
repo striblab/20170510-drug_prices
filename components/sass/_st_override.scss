@@ -1,0 +1,76 @@
+/* PROJECT STYLES */
+body,
+#filter,
+#filter input:focus {
+    font-family: "Benton Sans", Helvetica, Arial, sans-serif;
+}
+
+#chart .c3-line {
+    stroke-width: 6px !important;
+}
+
+#wrapper {
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+    width:520px;
+}
+
+#viewSwitch,
+#current {
+    padding: 10px;
+}
+
+.stat {
+    font-weight: 900;
+    font-size:1.1em;
+}
+
+h3 {
+    text-align: left;
+}
+
+.selected {
+    margin:0 !important;
+}
+
+#filter {
+    padding: 12px;
+}
+
+.source {
+    font-size: 0.8em;
+}
+
+#price, .pctchange {
+    font-weight:900;
+}
+
+.neg {
+    color:#857AAA;
+}
+
+.pos {
+    color:#5BBF48;
+}
+
+.chartSwitcher {
+    width:48%;
+    display:inline-block;
+    padding:10px;
+}
+
+.chartSwitcher:hover, .selected {
+    cursor:pointer;
+    color:#fff;
+    background-color:#333;
+}
+
+@media (max-width: 728px) {
+    #wrapper {
+        width:100%;
+    }
+    .chartSwitcher {
+        font-size:0.8em;
+    }
+}
