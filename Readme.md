@@ -39,6 +39,7 @@ The following are probably already installed on your computer if you have worked
 ## Deployment
 
 1. To build the production version: `NODE_ENV=production gulp`
+1. *To push to server ....?*
 
 ## Credits
 
