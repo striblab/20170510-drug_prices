@@ -76,7 +76,7 @@ $(document).ready(function() {
     var data = allData.find(function(r) {
       return r.id === id;
     });
-    if (!id) {
+    if (!data) {
       console.error('Unable to find data for id: ' + id);
       return;
     }
@@ -98,7 +98,10 @@ $(document).ready(function() {
     $container.find('.per-user-2015').html(formatCurrency(perUser2015.amount));
     $container.find('.per-user-change').html(formatChange(
       (perUser2015.amount - perUser2011.amount) / perUser2011.amount * 100, 1));
+
     $container.find('.has-different-names').toggle(!data.same);
+    $container.find('.per-user-full').toggle(!!data.perUserFull);
+    $container.find('.not-per-user-full').toggle(!data.perUserFull);
 
     // Drug switch
     $('.drug-switch').removeClass('active');

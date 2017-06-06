@@ -3811,6 +3811,9 @@ header[role="banner"] {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+#wrapper em {
+  font-style: italic;
+}
 
 .drug-details {
   margin-bottom: 2em;

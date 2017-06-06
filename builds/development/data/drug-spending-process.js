@@ -39,26 +39,23 @@ processed = _.map(source, (row) => {
 
   // Cost per user for each year
   parsed.perUser = [];
+  parsed.perUserFull = true;
   ['2011', '2012', '2013', '2014', '2015'].forEach((y) => {
     let v = parseFloat(row['Total Annual Spending Per User, ' + y]);
-    if (!_.isNaN(v)) {
-      parsed.perUser.push({
-        year: +y,
-        amount: v
-      });
-    }
-  });
+    parsed.perUser.push({
+      year: +y,
+      amount: !_.isNaN(v) ? v : null
+    });
 
-  // Mark as full set
-  if (parsed.perUser.length === 5) {
-    parsed.perUserFull = true;
-  }
+    // Mark as full set
+    parsed.perUserFull = _.isNaN(v) ? false : parsed.perUserFull;
+  });
 
   return parsed;
 });
 
 // Output
-fs.writeFileSync(outputPath, JSON.stringify(_.sortBy(processed. 'brand')));
+fs.writeFileSync(outputPath, JSON.stringify(_.sortBy(processed, 'brand')));
 
 
 
