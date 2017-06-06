@@ -7,6 +7,13 @@ $(document).ready(function() {
   var allData;
   var currentID;
 
+  // Try to get the jquery ui widget to behave better
+  // https://stackoverflow.com/questions/5643767/jquery-ui-autocomplete-width-not-set-correctly
+  jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+    var ul = this.menu.element;
+    ul.outerWidth(this.element.outerWidth());
+  }
+
   // Get drug data
   d3.json('./data/drug-spending.json', function(error, rows) {
     if (error) {
@@ -17,6 +24,9 @@ $(document).ready(function() {
     // Do any calculations
     allData = rows;
 
+    // Populate search
+    populateSearch();
+
     // Draw default chart
     showDrug('epipen-2-pak');
 
@@ -24,10 +34,33 @@ $(document).ready(function() {
     $('.drug-switch').on('click', function() {
       var id = $(this).data('id');
       if (id) {
+        $('#drug-search-input').val('');
         showDrug(id);
       }
     });
   });
+
+  // Populate search
+  function populateSearch() {
+    var $input = $('#drug-search-input');
+
+    $input.autocomplete({
+    minLength: 3,
+     source: allData.map(function(d) {
+       return {
+         value: d.id,
+         label: d.brand + ' / ' + d.generic
+       }
+     }),
+     select: function(e, ui) {
+       e.preventDefault();
+       $input.val(ui.item.label);
+       if (ui.item.value) {
+         showDrug(ui.item.value);
+       }
+     }
+   });
+  }
 
   // Show drug
   function showDrug(id) {
@@ -69,7 +102,7 @@ $(document).ready(function() {
 
     // Drug switch
     $('.drug-switch').removeClass('active');
-    $('[data-id=' + id + ']').addClass('active');
+    $('[data-id="' + id + '"]').addClass('active');
 
     // Draw chart
     var chart = c3.generate({

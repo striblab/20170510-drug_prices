@@ -57,12 +57,15 @@
         <h2>Search all drugs</h2>
 
         <div id="filter">
-          <input type="search" id="name-search" placeholder="Type name and press enter" />
+          <label class="sr-only" for="drug-search-input">Use the input below to search for other drugs</label>
+
+          <input type="search" name="drug-search-input" id="drug-search-input" value="" placeholder="Start typing to search" />
         </div>
       </div>
     </div>
 
-    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/d3.v3.min.js"></script>
     <script src="js/c3.min.js"></script>
     <script src="js/script.js"></script>

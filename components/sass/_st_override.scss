@@ -14,6 +14,7 @@ $wrapper-max: 520px;
   font-family: $bentonSans;
   font-size: 16px;
   padding-top: 1em;
+  margin-bottom: 1em;
   line-height: 1.25em;
 
   p {
@@ -29,6 +30,18 @@ $wrapper-max: 520px;
 
   h2 {
     font-weight: 900;
+    margin-bottom: 0.5em;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
   }
 }
 
@@ -80,4 +93,10 @@ $wrapper-max: 520px;
       color: #FFFFFF;
     }
   }
+}
+
+.ui-menu.ui-widget.ui-autocomplete {
+  max-height: 10em;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

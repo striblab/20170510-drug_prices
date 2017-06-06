@@ -58,7 +58,7 @@ processed = _.map(source, (row) => {
 });
 
 // Output
-fs.writeFileSync(outputPath, JSON.stringify(processed));
+fs.writeFileSync(outputPath, JSON.stringify(_.sortBy(processed. 'brand')));
 
 
 
