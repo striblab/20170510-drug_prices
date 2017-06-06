@@ -48,11 +48,11 @@ function switchChart(name,colors){
       index = i;
       for (var k=1; k < dataStream.length; k++){
         if (name != data[i].brand && name != data[i].generic){ break; }
-        if (axis[k] == data[index].year) { 
-          dataStream[k] = data[index].amount; 
+        if (axis[k] == data[index].year) {
+          dataStream[k] = data[index].amount;
           $("#rate").html(data[index].amount);
           $("#year").html(data[index].year);
-          index++; 
+          index++;
         }
       }
       // break;
@@ -145,7 +145,7 @@ var chart = c3.generate({
               // text += "<td class='name'><span style='background-color:" + bgcolor + "'></span>Total Births</td>";
               // text += "<td class='value'>" + priceNum + "</td>";
               // text += "</tr>";
-              
+
           }
           return text + "</table>";
       }
@@ -167,13 +167,13 @@ $.urlParam = function(name){
   else { return 0; }
 }
 
-if ($.urlParam('name') != 0 ) { 
+if ($.urlParam('name') != 0 ) {
   var name = $.urlParam('name').toUpperCase();
   var colorMe = "#333333"
   $(".named").html(decodeURI(name));
   switchChart(decodeURI(name),colorMe);
   if (decodeURI(name) != "EPIPEN 2-PAK") { $(".chartSwitcher").removeClass("selected"); }
-} 
+}
 
   $( document ).ready(function() {
     $(".chartSwitcher").click(function()  {
@@ -191,8 +191,9 @@ if ($.urlParam('name') != 0 ) {
           window.location.href = './?name=' + $('#filter_box').val();
         }
     });
-    
-});   
 
 });
+
+});
+
 },{}]},{},[1])
