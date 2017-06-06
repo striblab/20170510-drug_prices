@@ -2,6 +2,18 @@
 
 Visual look at how drug prices have increased or decreased.  Created by [Frey Hargarten](https://github.com/jeffhargarten).
 
+## Data
+
+Data provided by ?? and can be found in `builds/development/data/_raw`.
+
+### Processing
+
+In order to process the data and get to the form that is used in the visual piece:
+
+1. Convert to CSV: `in2csv --sheet="Data" builds/development/data/_raw/Medicare_Drug_Spending_PartD_All_Drugs_YTD_2015_12_06_2016.xlsx | tail -n +4 > builds/development/data/drug-spending.csv`
+1. Parse and compress: `node builds/development/data/drug-spending-process.js`
+    * This will output: `builds/development/data/drug-spending.json`
+
 ## Development
 
 Most commands are assumed to be on the command line (Terminal on a Mac).
