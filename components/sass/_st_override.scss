@@ -1,76 +1,83 @@
 /* PROJECT STYLES */
-body,
-#filter,
-#filter input:focus {
-    font-family: "Benton Sans", Helvetica, Arial, sans-serif;
-}
 
-#chart .c3-line {
-    stroke-width: 6px !important;
-}
+$color-strib-green: #61BF1A;
+$color-dark-green: #4C9414;
+$color-dark-red: #941D14;
+$wrapper-max: 520px;
+
 
 #wrapper {
-    text-align:center;
-    margin-right:auto;
-    margin-left:auto;
-    width:520px;
-}
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $wrapper-max;
+  font-family: $bentonSans;
+  font-size: 16px;
+  padding-top: 1em;
+  line-height: 1.25em;
 
-#viewSwitch,
-#current {
-    padding: 10px;
-}
+  p {
+    font-family: $bentonSans;
+    font-size: 16px;
+    margin-bottom: 1em;
+  }
 
-.stat {
+  @media screen and (max-width: $wrapper-max) {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  h2 {
     font-weight: 900;
-    font-size:1.1em;
+  }
 }
 
-h3 {
-    text-align: left;
-}
+.drug-details {
+  margin-bottom: 2em;
 
-.selected {
-    margin:0 !important;
-}
+  .brand-name {
+    font-weight: 900;
+  }
 
-#filter {
-    padding: 12px;
-}
+  .description {
+    max-width: 85%;
+    margin: 0 auto;
+  }
 
-.source {
-    font-size: 0.8em;
-}
+  .per-user-change {
+    font-weight: 900;
+  }
 
-#price, .pctchange {
-    font-weight:900;
-}
+  .positive {
+    color: $color-dark-green;
+  }
 
-.neg {
-    color:#857AAA;
-}
+  .negative {
+    color: $color-dark-red;
+  }
 
-.pos {
-    color:#5BBF48;
-}
-
-.chartSwitcher {
-    width:48%;
-    display:inline-block;
-    padding:10px;
-}
-
-.chartSwitcher:hover, .selected {
-    cursor:pointer;
-    color:#fff;
-    background-color:#333;
-}
-
-@media (max-width: 728px) {
-    #wrapper {
-        width:100%;
+  #chart {
+    .c3-line {
+      stroke-width: 6px !important;
     }
-    .chartSwitcher {
-        font-size:0.8em;
+  }
+}
+
+.drugs-of-note {
+  margin-bottom: 2em;
+
+  .drug-switch {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+
+    &:hover {
+      background-color: #BBBBBB;
     }
+
+    &.active {
+      background-color: #222222;
+      color: #FFFFFF;
+    }
+  }
 }

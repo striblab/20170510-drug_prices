@@ -1838,79 +1838,66 @@ header[role="banner"] {
 }
 
 /* PROJECT STYLES */
-body,
-#filter,
-#filter input:focus {
-  font-family: "Benton Sans", Helvetica, Arial, sans-serif;
-}
-
-#chart .c3-line {
-  stroke-width: 6px !important;
-}
-
 #wrapper {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  width: 520px;
+  max-width: 520px;
+  font-family: "Benton Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  padding-top: 1em;
+  line-height: 1.25em;
 }
-
-#viewSwitch,
-#current {
-  padding: 10px;
+#wrapper p {
+  font-family: "Benton Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 1em;
 }
-
-.stat {
-  font-weight: 900;
-  font-size: 1.1em;
-}
-
-h3 {
-  text-align: left;
-}
-
-.selected {
-  margin: 0 !important;
-}
-
-#filter {
-  padding: 12px;
-}
-
-.source {
-  font-size: 0.8em;
-}
-
-#price, .pctchange {
-  font-weight: 900;
-}
-
-.neg {
-  color: #857AAA;
-}
-
-.pos {
-  color: #5BBF48;
-}
-
-.chartSwitcher {
-  width: 48%;
-  display: inline-block;
-  padding: 10px;
-}
-
-.chartSwitcher:hover, .selected {
-  cursor: pointer;
-  color: #fff;
-  background-color: #333;
-}
-
-@media (max-width: 728px) {
+@media screen and (max-width: 520px) {
   #wrapper {
-    width: 100%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
+}
+#wrapper h2 {
+  font-weight: 900;
+}
 
-  .chartSwitcher {
-    font-size: 0.8em;
-  }
+.drug-details {
+  margin-bottom: 2em;
+}
+.drug-details .brand-name {
+  font-weight: 900;
+}
+.drug-details .description {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.drug-details .per-user-change {
+  font-weight: 900;
+}
+.drug-details .positive {
+  color: #4C9414;
+}
+.drug-details .negative {
+  color: #941D14;
+}
+.drug-details #chart .c3-line {
+  stroke-width: 6px !important;
+}
+
+.drugs-of-note {
+  margin-bottom: 2em;
+}
+.drugs-of-note .drug-switch {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+}
+.drugs-of-note .drug-switch:hover {
+  background-color: #BBBBBB;
+}
+.drugs-of-note .drug-switch.active {
+  background-color: #222222;
+  color: #FFFFFF;
 }

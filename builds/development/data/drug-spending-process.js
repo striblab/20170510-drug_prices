@@ -37,16 +37,21 @@ processed = _.map(source, (row) => {
   // Make id
   parsed.id = makeID(parsed.brand);
 
-  // Cost per unit per year
-  parsed.perUser2011 = parseFloat(row['Total Annual Spending Per User, 2011']);
-  parsed.perUser2012 = parseFloat(row['Total Annual Spending Per User, 2012']);
-  parsed.perUser2013 = parseFloat(row['Total Annual Spending Per User, 2013']);
-  parsed.perUser2014 = parseFloat(row['Total Annual Spending Per User, 2014']);
-  parsed.perUser2015 = parseFloat(row['Total Annual Spending Per User, 2015']);
+  // Cost per user for each year
+  parsed.perUser = [];
+  ['2011', '2012', '2013', '2014', '2015'].forEach((y) => {
+    let v = parseFloat(row['Total Annual Spending Per User, ' + y]);
+    if (!_.isNaN(v)) {
+      parsed.perUser.push({
+        year: +y,
+        amount: v
+      });
+    }
+  });
 
   // Mark as full set
-  if (parsed['2011'] && parsed['2012'] && parsed['2013'] && parsed['2014'] && parsed['2015']) {
-    parsed.full = true;
+  if (parsed.perUser.length === 5) {
+    parsed.perUserFull = true;
   }
 
   return parsed;
