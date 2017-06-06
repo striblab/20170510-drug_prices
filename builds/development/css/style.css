@@ -3845,6 +3845,7 @@ header[role="banner"] {
   cursor: pointer;
   display: inline-block;
   padding: 0.25em 0.5em;
+  margin-bottom: 0.25em;
 }
 .drugs-of-note .drug-switch:hover {
   background-color: #BBBBBB;

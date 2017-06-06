@@ -66,10 +66,10 @@ function breakName(name) {
 
 // Make ID from name
 function makeID(name, subname) {
-  let id = name.trim().toLowerCase().replace(/\W+/i, '-');
+  let id = name.trim().toLowerCase().replace(/(\W|\s)+/gi, '-');
 
   if (~ids.indexOf(id)) {
-    id = id + '-' + subname.trim().toLowerCase().replace(/\W+/i, '-');
+    id = id + '-' + subname.trim().toLowerCase().replace(/\W+/gi, '-');
   }
 
   ids.push[id];
