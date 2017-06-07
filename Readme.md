@@ -56,8 +56,11 @@ Deployment is managed in specific repositories:
 * [General visuals](https://github.com/striblab/startribune_dataviz)
 * [Elections (2016)](https://github.com/striblab/2016election)
 
+The following will change based on which deployment repo this is going to and where you have that repository locally.
+
 1. Build the production version: `NODE_ENV=production gulp`
-1. *To push to server ....?*
+1. Copy files (update path as needed): `mkdir -p ../datadrop/20170510-drug_prices/ && rsync -rav ./ ../datadrop/20170510-drug_prices/ --exclude=".git" --exclude="node_modules" --exclude=".sass-cache" --delete-after`
+1. Update the relevant deployment repo.
 
 ## Credits
 

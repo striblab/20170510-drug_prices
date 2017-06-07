@@ -142,6 +142,10 @@ $(document).ready(function() {
           tick: {
             count: 4,
             format: d3.format('$,.0f')
+          },
+          label: {
+            text: 'Average cost per person',
+            position: 'outer-middle'
           }
         },
         x: {
