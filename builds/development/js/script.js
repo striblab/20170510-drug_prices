@@ -150,6 +150,14 @@ $(document).ready(function() {
             right: 0.25
           }
         }
+      },
+      tooltip: {
+        contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
+          return '<div class="chart-tooltip">' +
+            '<span class="tooltip-label">' + d[0].x + ':</span>' +
+            '<span class="tooltip-value">' + defaultValueFormat(d[0].value) + '</span>' +
+            '</div>';
+        }
       }
     });
   }

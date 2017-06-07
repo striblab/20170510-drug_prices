@@ -77,6 +77,19 @@ $wrapper-max: 520px;
     .c3-line {
       stroke-width: 6px !important;
     }
+
+    .chart-tooltip {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #FFFFFF;
+      font-size: 0.85em;
+      padding: 0.5em 1em;
+
+      .tooltip-label {
+        font-weight: 900;
+        display: inline-block;
+        padding-right: 0.5em;
+      }
+    }
   }
 }
 

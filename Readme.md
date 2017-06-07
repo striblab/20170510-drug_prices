@@ -50,7 +50,13 @@ The following are probably already installed on your computer if you have worked
 
 ## Deployment
 
-1. To build the production version: `NODE_ENV=production gulp`
+Deployment is managed in specific repositories:
+
+* [Data Drop](https://github.com/striblab/datadrop)
+* [General visuals](https://github.com/striblab/startribune_dataviz)
+* [Elections (2016)](https://github.com/striblab/2016election)
+
+1. Build the production version: `NODE_ENV=production gulp`
 1. *To push to server ....?*
 
 ## Credits
