@@ -3837,6 +3837,17 @@ header[role="banner"] {
 .drug-details #chart .c3-line {
   stroke-width: 6px !important;
 }
+.drug-details #chart .chart-tooltip {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFFFFF;
+  font-size: 0.85em;
+  padding: 0.5em 1em;
+}
+.drug-details #chart .chart-tooltip .tooltip-label {
+  font-weight: 900;
+  display: inline-block;
+  padding-right: 0.5em;
+}
 
 .drugs-of-note {
   margin-bottom: 2em;
@@ -3859,4 +3870,14 @@ header[role="banner"] {
   max-height: 10em;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.drug-search {
+  margin-bottom: 1em;
+}
+
+.source-notes {
+  font-size: 0.85em;
+  text-align: right;
+  color: #BABABA;
 }

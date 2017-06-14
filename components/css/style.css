@@ -3871,3 +3871,13 @@ header[role="banner"] {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+.drug-search {
+  margin-bottom: 1em;
+}
+
+.source-notes {
+  font-size: 0.85em;
+  text-align: right;
+  color: #BABABA;
+}
