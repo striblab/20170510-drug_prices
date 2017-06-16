@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const csv = require('d3-dsv').dsvFormat(',');
 const _ = require('lodash');
-
+require('console.table');
 
 // Input
 const source = csv.parse(fs.readFileSync(path.join(__dirname, 'drug-spending.csv'), 'utf-8'));
@@ -57,6 +57,46 @@ processed = _.map(source, (row) => {
 // Output
 fs.writeFileSync(outputPath, JSON.stringify(_.sortBy(processed, 'brand')));
 
+// Find some high value targets
+console.table('Highest prices of any year', _.take(_.map(_.sortBy(processed, (d) => {
+  let m = _.maxBy(d.perUser, 'amount');
+  return m ? m.amount : -1;
+}), (d) => {
+  let m = _.maxBy(d.perUser, 'amount');
+
+  return {
+    id: d.id,
+    'Max amount': m ? m.amount : null,
+    'Max year': m ? m.year : null,
+    'All years': d.perUserFull
+  };
+}).reverse(), 20));
+
+console.table('Highest change', _.take(_.map(_.sortBy(processed, (d) => {
+  return !d.perUserFull ? -1 : (d.perUser[4].amount - d.perUser[0].amount) / d.perUser[0].amount;
+}), (d) => {
+  let m = _.maxBy(d.perUser, 'amount');
+
+  return {
+    id: d.id,
+    '2011': d.perUserFull ? d.perUser[0].amount : null,
+    '2015': d.perUserFull ? d.perUser[4].amount : null,
+    'Change': d.perUserFull ? ((d.perUser[4].amount - d.perUser[0].amount) / d.perUser[0].amount * 100).toFixed(1) + '%' : null
+  };
+}).reverse(), 20));
+
+console.table('Lowest change', _.take(_.map(_.sortBy(processed, (d) => {
+  return !d.perUserFull ? 0 : (d.perUser[4].amount - d.perUser[0].amount) / d.perUser[0].amount;
+}), (d) => {
+  let m = _.maxBy(d.perUser, 'amount');
+
+  return {
+    id: d.id,
+    '2011': d.perUserFull ? d.perUser[0].amount : null,
+    '2015': d.perUserFull ? d.perUser[4].amount : null,
+    'Change': d.perUserFull ? ((d.perUser[4].amount - d.perUser[0].amount) / d.perUser[0].amount * 100).toFixed(1) + '%' : null
+  };
+}), 20));
 
 
 // Break down a name
