@@ -6,6 +6,7 @@
 $(document).ready(function() {
   var allData;
   var currentID;
+  var initialDrug = 'epipen-2-pak';
 
   // Extra information about notable drugs
   var extra = {
@@ -45,7 +46,7 @@ $(document).ready(function() {
     populateSearch();
 
     // Draw default chart
-    showDrug('epipen-2-pak');
+    showDrug(initialDrug);
 
     // Handle drug switching buttons
     $('.drug-switch').on('click', function() {
@@ -134,7 +135,7 @@ $(document).ready(function() {
         top: 20,
         right: 60,
         bottom: 20,
-        left: 60,
+        left: 90,
       },
       data: {
         x: 'x',
