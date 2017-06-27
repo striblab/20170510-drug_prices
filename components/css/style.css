@@ -3824,6 +3824,7 @@ header[role="banner"] {
 .drug-details .description {
   max-width: 85%;
   margin: 0 auto;
+  height: 120px;
 }
 .drug-details .per-user-change {
   font-weight: 900;
@@ -3847,6 +3848,10 @@ header[role="banner"] {
   font-weight: 900;
   display: inline-block;
   padding-right: 0.5em;
+}
+
+.chart-title {
+  height: 60px;
 }
 
 .drugs-of-note {

@@ -59,6 +59,7 @@ $wrapper-max: 520px;
   .description {
     max-width: 85%;
     margin: 0 auto;
+    height:120px;
   }
 
   .per-user-change {
@@ -91,6 +92,10 @@ $wrapper-max: 520px;
       }
     }
   }
+}
+
+.chart-title {
+  height:60px;
 }
 
 .drugs-of-note {
