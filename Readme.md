@@ -10,10 +10,10 @@ Data provided by Centers for Medicare and Medicaid Services and can be found in 
 
 In order to process the data and get to the form that is used in the visual piece:
 
-1. Convert to CSV: `in2csv --sheet="Data" builds/development/data/_raw/Medicare_Drug_Spending_PartD_All_Drugs_YTD_2015_12_06_2016.xlsx | tail -n +4 > builds/development/data/drug-spending.csv`
+1. Convert to CSV: `in2csv --sheet="<name of sheet you want here>" builds/development/data/_raw/Medicare_Drug_Spending_PartD_All_Drugs_YTD_2015_12_06_2016.xlsx | tail -n +4 > builds/development/data/drug-spending.csv`
 1. Parse and compress: `node builds/development/data/drug-spending-process.js`
     * This will output: `builds/development/data/drug-spending.json`
-    * This will also output some info about some drugs that may be most notable.
+
 
 ## Development
 

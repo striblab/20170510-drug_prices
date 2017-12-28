@@ -3801,6 +3801,15 @@ header[role="banner"] {
   font-weight: 900;
   margin-bottom: 0.5em;
 }
+#wrapper .byline {
+  font-family: "Benton Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.6em;
+  color: #888;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
 #wrapper .sr-only {
   position: absolute;
   width: 1px;
